@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap');
+
+
+body {
+  background-color: #f7f7f7;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.top {
+  background-color: #c7003d;
+  color: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 2rem;
+  font-size: 14px;
+  /* border: 1px solid; */
+}
+
+.top ul {
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.top ul li {
+  margin: 0 10px;
+}
+
+.nav {
+  display: flex;
+  /* justify-content: space-around; */
+  width: 100%;
+  background-color: #e40046;
+  color: #ffffff;
+  position: sticky;
+  top: 0%;
+}
+
+.nav .left {
+  width: 20%;
+  /* border: 1px solid; */
+}
+
+.nav .left img {
+  height: 65px;
+  /* padding: 0.5rem; */
+  /* margin-top: 0%; */
+  /* border: 1px solid; */
+  margin-left: 20%;
+  cursor: pointer;
+}
+
+.middle {
+  /* border: 1px solid; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3%;
+}
+
+.middle input {
+  width: 70%;
+  height: 50%;
+  padding: 1rem;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.middle button {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0.5rem;
+  width: 15%;
+  height: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.right {
+  /* border: 1px solid; */
+  width: 23%;
+}
+
+.nav .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.nav .right div {
+  /* border: 1px solid #333333; */
+  width: 50%;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav .right div:last-child:hover {
+  background-color: #333333;
+  width: 50%;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav .right div i {
+  font-size: 20px;
+  margin-left: 8%;
+}
+
+.fa-user {
+  padding: 0.3rem;
+  background-color: rgba(114, 113, 113, 0.384);
+  font-size: 60px;
+  border-radius: 25px;
+}
+
+.nav .right div p {
+  font-size: 20px;
+
+}
