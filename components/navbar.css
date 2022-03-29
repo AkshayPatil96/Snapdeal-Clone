@@ -39,7 +39,7 @@ body {
   width: 100%;
   background-color: #e40046;
   color: #ffffff;
-  position: sticky;
+  position: fixed;
   top: 0%;
 }
 

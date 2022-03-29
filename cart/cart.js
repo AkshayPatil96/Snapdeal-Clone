@@ -59,7 +59,7 @@ function displayData(items){
 
         let d3 = document.createElement("td");
         let price = document.createElement("p");
-        price.innerText = `Rs. - ${elem.price}`;
+        price.innerText = `Rs.  ${elem.price}`;
         d3.append(price);
 
         let d4 = document.createElement("td");

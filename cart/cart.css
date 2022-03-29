@@ -1,7 +1,11 @@
 body{
+
+    font-family: sans-serif;
+}
+
+#cart{
     margin-left: 80px;
     margin-right: 80px;
-    font-family: sans-serif;
 }
 
 
@@ -11,11 +15,13 @@ h3{
     font-weight: bolder;
     font-size: 38px;
     color: #5a5a59;
-    
+    padding-top: 80px;
+    /* position: fixed; */
 }
 
 table{
     padding-bottom: 100px;
+    padding-top: 20px;
 }
 
 th{
@@ -23,6 +29,13 @@ th{
     background-color: grey;
     height: 40px;
 }
+
+thead{
+    padding-top: 100px;
+    /* position: fixed; */
+}
+
+
 
 #detail{
     width: 400px;
@@ -35,7 +48,8 @@ td{
 
 .d5{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 65px;
+    font-size: 16px;
 }
 
 #box{
@@ -46,8 +60,9 @@ td{
 
 button{
     background-color: #5a5a5959;
-    border: none;
+    border: 1px solid black;
     font-weight: bold;
+    width: 100px;
 }
 
 #footer{

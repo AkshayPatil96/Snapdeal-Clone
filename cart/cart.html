@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Page</title>
     <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../components/navbar.css">
     <script src="https://kit.fontawesome.com/e83fe8687f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -51,5 +52,11 @@
 <script src="cart.js"></script>
 
 <script type="module">
+    let header =  document.querySelector("#navbar");
+    import navbar from "../components/navbar.js";
+
+    // console.log(navbar);
+
+    header.innerHTML = navbar();
     
 </script>
