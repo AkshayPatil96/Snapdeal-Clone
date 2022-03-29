@@ -1,21 +1,27 @@
 body{
     margin-left: 80px;
     margin-right: 80px;
+    font-family: sans-serif;
 }
 
 
 h3{
     line-height: 34px;
     font-family: "font-regular";
-    font-weight: normal;
-    font-size: 18px;
+    font-weight: bolder;
+    font-size: 38px;
     color: #5a5a59;
     
+}
+
+table{
+    padding-bottom: 100px;
 }
 
 th{
     width: 200px;
     background-color: grey;
+    height: 40px;
 }
 
 #detail{
@@ -25,6 +31,11 @@ th{
 td{
     margin: auto;
     text-align: center;
+}
+
+.d5{
+    text-align: center;
+    margin-top: 40px;
 }
 
 #box{
@@ -39,3 +50,26 @@ button{
     font-weight: bold;
 }
 
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #222222;
+    color: white;
+    display: flex;
+    font-weight: normal;
+}
+
+#footer>div{
+    width: 20%;
+    margin: auto;
+}
+
+#pay{
+    width: 80%;
+    height: 50px;
+    background-color: #E40046;
+    color: white;
+    font-weight: bold;
+}
