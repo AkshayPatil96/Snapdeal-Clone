@@ -5,16 +5,114 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/components/navbar.css" />
+        <link rel="stylesheet" href="/components/footer.css" />
+        <link rel="stylesheet" href="/style.css" />
+        <script
+            src="https://kit.fontawesome.com/9d6433328b.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Document</title>
     </head>
     <body>
+        <!-- navbar -->
         <div id="header"></div>
+
+        <!-- main body -->
+        <div class="container">
+            <div class="sidebar">
+                <ul class="top-category-menu category">
+                    <li class="top-category">TOP CATEGORIES</li>
+                    <li>
+                        <img
+                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
+                            alt="Men's Fashion"
+                        />
+                        <p>Men's Fashion</p>
+                    </li>
+                    <li>
+                        <img
+                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
+                            alt="Men's Fashion"
+                        />
+                        <p>Men's Fashion</p>
+                    </li>
+                    <li>
+                        <img
+                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
+                            alt="Men's Fashion"
+                        />
+                        <p>Men's Fashion</p>
+                    </li>
+                    <li>
+                        <img
+                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
+                            alt="Men's Fashion"
+                        />
+                        <p>Men's Fashion</p>
+                    </li>
+                    <li>
+                        <img
+                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
+                            alt="Men's Fashion"
+                        />
+                        <p>Men's Fashion</p>
+                    </li>
+                </ul>
+                <ul class="more-categories-menu category">
+                    <li class="more-categories">MORE CATEGORIES</li>
+                    <li>Automotives</li>
+                    <li>Mobile & Accessories</li>
+                    <li>Electronics</li>
+                    <li>Sports, Fitness & Outdoors</li>
+                    <li>Computers & Gaming</li>
+                    <li>Books, Media & Music</li>
+                    <li>Hobbies</li>
+                </ul>
+                <div class="qr-code">
+                    <img
+                        src="http://unsplash.it/75/75/?gravity=center"
+                        alt=""
+                    />
+                    <div class="scan">
+                        <p>Enjoy Convenient Order Tracking</p>
+                        <p>Scan to download App</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel"></div>
+            <div class="trending">1</div>
+            <!-- <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div> -->
+        </div>
+
+        <!-- footer -->
+        <div id="footer"></div>
     </body>
 </html>
 <script type="module">
+    import { navbar, footer } from "./components/navbar.js";
+
     let header = document.querySelector("#header");
-
-    import navbar from "./components/navbar.js";
-
     header.innerHTML = navbar();
+
+    let foot = document.querySelector("#footer");
+    foot.innerHTML = footer();
+
+    var btn1 = document.querySelector(".user");
+
+    var list = document.querySelector(".ham");
+
+    list.style.display = "none";
+
+    btn1.addEventListener("click", function () {
+        if (list.style.display == "none") {
+            list.style.display = "block";
+        } else {
+            list.style.display = "none";
+        }
+    });
 </script>
+
+<!-- <script src='/components/ham.js'></script> -->
