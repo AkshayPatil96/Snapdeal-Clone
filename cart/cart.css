@@ -46,6 +46,14 @@ td{
     text-align: center;
 }
 
+hr{
+    width: 600%;
+}
+
+#subtotal{
+    padding-left: 70px;
+}
+
 .d5{
     text-align: center;
     margin-top: 65px;
@@ -63,6 +71,7 @@ button{
     border: 1px solid black;
     font-weight: bold;
     width: 100px;
+    border-radius: 30px;
 }
 
 #footer{
@@ -82,7 +91,7 @@ button{
 }
 
 #pay{
-    width: 80%;
+    width: 100%;
     height: 50px;
     background-color: #E40046;
     color: white;

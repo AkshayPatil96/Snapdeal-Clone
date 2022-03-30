@@ -38,7 +38,6 @@ const displayData = (items) =>{
     items.forEach(({ img, title, price, qty },index) =>{
 
         let div = document.createElement("tr");
-        
 
         let d1 = document.createElement("td");
         let pic = document.createElement("img");
@@ -65,13 +64,13 @@ const displayData = (items) =>{
         let d4 = document.createElement("td");
 
         let btn1 = document.createElement("button");
-        btn1.innerText = "ADD 1";
+        btn1.innerText = "ADD";
         btn1.addEventListener("click",function(){
             add1(index);
         })
 
         let btn2 = document.createElement("button");
-        btn2.innerText = "REMOVE 1";
+        btn2.innerText = "REMOVE";
         btn2.addEventListener("click",function(){
             remove1(index);
         })
@@ -87,7 +86,9 @@ const displayData = (items) =>{
 
 
         div.append(d1,d2,d3,d4,d5)
-        document.querySelector("tbody").append(div)
+
+        let hr = document.createElement("hr")
+        document.querySelector("tbody").append(div,hr)
         
     });
 
@@ -100,6 +101,8 @@ const displaytotal = () =>{
     }, 0)
 
     document.querySelector("#total").innerText = `Sub Total :   Rs. ${total}`
+
+    document.querySelector("#pay").innerText = `PROCEED TO PAY ( Rs. ${total+50})`
 }
 
 displayData(cartArr);
