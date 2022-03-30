@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="/components/navbar.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9d6433328b.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .products {
+        background: #ffffff;
+        padding: 10px;
+
+    }
+
+    #products-top-bar {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    #product-type {
+        color: #5a5a59;
+        float: left;
+        font-size: 23px;
+    }
+
+    #sortby-dropdown {
+        border: 1px solid #e8e8e8;
+        padding: 12px 12px 12px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+        color: #999;
+        font-size: 13px;
+    }
+
+    #sortby-dropdown select {
+        border: none;
+    }
+
+    #divider {
+        background: #999;
+        height: 1px;
+        margin-top: 20px;
+    }
+
+    #product-bar {
+        margin-top: 20px;
+        padding: 10px;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    #product-bar>div {
+        /* border: 1px solid black; */
+        padding: 8px;
+    }
+    #product-bar>div:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    #product-bar>div>p {
+        margin-bottom: 20px;
+        color: #666;
+        font: 13px 'Quicksand', sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 18px;
+        overflow: hidden;
+        font-weight: 700;
+    }
+    #product-bar>div>img {
+        width: 100%;
+    }
+
+    #product-bar>div>#priceDiv>span:first-child {
+        text-decoration: line-through;
+        color: #d3c6bf;
+        margin-right: 10px;
+    }
+</style>
+
+<body>
+    <!-- navbar -->
+    <div id="header"></div>
+    <div class="container">
+        <div class="sidebar"></div>
+        <div class="products">
+            <div id="products-top-bar">
+                <div id="product-type"></div>
+                <div id="sortby-dropdown">Sort by:
+                    <select id="select-sort">
+                        <option value="ltoh">Price Low To High</option>
+                        <option value="htol">High Low To Low</option>
+                    </select>
+                </div>
+            </div>
+            <div id="divider"></div>
+            <div id="product-bar"></div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
+<script type="module">
+    import { navbar, footer } from "./components/navbar.js";
+
+    let header = document.querySelector("#header");
+    header.innerHTML = navbar();
+
+    let foot = document.querySelector("#footer");
+    foot.innerHTML = footer();
+
+    var btn1 = document.querySelector(".user");
+
+    var list = document.querySelector(".ham");
+
+    list.style.display = "none";
+
+    btn1.addEventListener("click", function () {
+        if (list.style.display == "none") {
+            list.style.display = "block";
+        } else {
+            list.style.display = "none";
+        }
+    });
+
+    let item = JSON.parse(localStorage.getItem("item"));
+    console.log(item);
+    item.sort((a,b)=>{
+        return a.price-b.price;
+    })
+    // for(let i=0;i<item.length;i++){
+
+    // }
+    let FashionName = localStorage.getItem("Fashion");
+
+    let append = (data) => {
+        document.getElementById("product-type").innerText=FashionName;
+        data.map((elem) => {
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            img.src = elem.image;
+            let name = document.createElement("p");
+            name.innerText = elem.name;
+            let pricediv = document.createElement("div");
+            pricediv.setAttribute("id", "priceDiv")
+            let strikedOfprice = document.createElement("span");
+            strikedOfprice.innerText = "Rs. " + elem.strikedOfprice;
+            let price = document.createElement("span");
+            price.innerText = "Rs. " + elem.price
+            pricediv.append(strikedOfprice, price);
+            let rating = document.createElement("div");
+            let ratingValue = elem.rating;
+            for (let i = 1; i <= 5; i++) {
+                let span = document.createElement("span");
+                if (i <= ratingValue) {
+                    span.innerHTML = "★"
+                    span.style.color = "gold"
+                } else {
+                    span.innerHTML = "★"
+                    span.style.color = "#d3c6bf"
+                }
+                rating.append(span);
+            }
+            div.append(img, name, pricediv, rating)
+            document.getElementById("product-bar").append(div)
+
+        })
+    }
+    append(item);
+
+</script>
