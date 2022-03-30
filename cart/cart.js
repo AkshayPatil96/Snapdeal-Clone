@@ -31,23 +31,23 @@ cartArr.push(prod5);
 
 console.log(cartArr);
 
-function displayData(items){
+const displayData = (items) =>{
 
     document.querySelector("tbody").innerHTML = "";
 
-    items.forEach(function(elem,index){
+    items.forEach(({ img, title, price, qty },index) =>{
 
         let div = document.createElement("tr");
         
 
         let d1 = document.createElement("td");
         let pic = document.createElement("img");
-        pic.src = elem.img;
+        pic.src = img;
         d1.append(pic);
 
         let d2 = document.createElement("td");
         let name = document.createElement("p");
-        name.innerText = elem.title;
+        name.innerText = title;
 
         var del = document.createElement("i");
         del.className="fa fa-trash";
@@ -58,9 +58,9 @@ function displayData(items){
         d2.append(name,del);
 
         let d3 = document.createElement("td");
-        let price = document.createElement("p");
-        price.innerText = `Rs.  ${elem.price}`;
-        d3.append(price);
+        let rate = document.createElement("p");
+        rate.innerText = `Rs.  ${price}`;
+        d3.append(rate);
 
         let d4 = document.createElement("td");
 
@@ -77,12 +77,12 @@ function displayData(items){
         })
 
         let btn3 = document.createElement("h4");
-        btn3.innerText = elem.qty;
+        btn3.innerText = qty;
 
         d4.append(btn1,btn3,btn2)
 
         let d5 = document.createElement("h5")
-        d5.innerText = `Rs. ${elem.price*elem.qty}`
+        d5.innerText = `Rs. ${price*qty}`
         d5.setAttribute("class","d5")
 
 
@@ -93,7 +93,7 @@ function displayData(items){
 
 }
 
-function displaytotal(){
+const displaytotal = () =>{
 
     let total = cartArr.reduce(function(acc,elem){
         return acc + (elem.price * elem.qty);
@@ -105,7 +105,7 @@ function displaytotal(){
 displayData(cartArr);
 displaytotal();
 
-function add1(index){
+const add1 =(index) =>{
     // console.log(index);
     cartArr[index].qty++;
     // console.log(cartArr)
@@ -115,7 +115,7 @@ function add1(index){
     displaytotal();
 }
 
-function remove1(index){
+const remove1 =(index) =>{
     // console.log(index);
     cartArr[index].qty--;
     // console.log(cartArr)
@@ -125,7 +125,7 @@ function remove1(index){
     displaytotal();
 }
 
-function del(index){
+const del =(index) =>{
     cartArr.splice(index,1);
     localStorage.setItem("cartItems",JSON.stringify(cartArr));
     displayData(cartArr);
