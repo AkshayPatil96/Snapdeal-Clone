@@ -17,7 +17,7 @@
 <style>
     .products {
         background: #ffffff;
-        padding: 10px;
+        padding: 25px;
 
     }
 
@@ -87,13 +87,54 @@
         color: #d3c6bf;
         margin-right: 10px;
     }
+    .sidebar{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .sidebar>#filters>#byprice{
+        display: flex;
+    }
+    .sidebar>#filters>#byprice>input{
+        width: 30%;
+        padding: 5px;
+        font-size: 14px;
+        margin-right: 5px;
+        border: 1px solid #dbdbdb;
+        margin-top: 20px;
+        border-radius: 3px;
+    }
+    .sidebar>#filters>#byprice>input[type="submit"]{
+        background-color: #ffffff;
+    }
+    .sidebar>#filters>#byprice>input::placeholder{
+        font-size: 10px;
+    }
+    hr{
+        border: none;
+        height: 1px;
+        background: #e8e8e8;
+    }
 </style>
 
 <body>
     <!-- navbar -->
     <div id="header"></div>
     <div class="container">
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <p>Filter By:</p>
+            <div id="divider"></div>
+            <div id="filters">
+                <p>Price</p>
+                <hr>
+                <div id="byprice">
+                    <input type="number" placeholder="Low" id="low">
+                    <input type="number" placeholder="High" id="high">
+                    <input type="submit" value="GO">
+                </div>
+            </div>
+        </div>
         <div class="products">
             <div id="products-top-bar">
                 <div id="product-type"></div>
@@ -101,7 +142,7 @@
                     <select id="select-sort">
                         <option value=""></option>
                         <option value="ltoh">Price Low To High</option>
-                        <option value="htol">High Low To Low</option>
+                        <option value="htol">Price High To Low</option>
                     </select>
                 </div>
             </div>
