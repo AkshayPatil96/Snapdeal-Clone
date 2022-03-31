@@ -9,6 +9,10 @@ body{
     padding-top: 25px;
 }
 
+img{
+    height: 150px;
+}
+
 
 h3{
     line-height: 34px;
@@ -97,4 +101,9 @@ button{
     background-color: #E40046;
     color: white;
     font-weight: bold;
+}
+
+#navbar{
+    position: fixed;
+    width: 100%;
 }
