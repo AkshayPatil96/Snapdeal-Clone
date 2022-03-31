@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/2ndpage.css"/>
+</head>
+
+<body>
+    <div id="upper">
+        <div>
+            <img  id="icon"src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg">
+        </div>
+        <div>
+            <p>100% Payment Protection, Easy Returns Policy</p>
+        </div>
+    </div>
+    <center>
+        <div id="lower">
+            <div id="filldetails">
+                <div class="blackheading">
+                    <h5 id="address">Make Payment</h5> 
+                </div>
+                <div id="payment">
+                    <div id="paymentoption">
+                        <div id="credit"><p>Credit Card</p></div>
+                        <div id="debit"><p>Debit Card</p></div>
+                        <div id="net"><p>Net Banking</p></div>
+                        <div id="cod"><p>Cash On Delivery</p></div>
+                        <div id="emi"><p>EMI</p></div>
+                        <div id="gift"><p>e-Gift Voucher</p></div>
+                        <div id="upi"><p>UPi</p></div>
+                    </div>
+                    
+                    <div id="paymentdetails">
+                        <div id="bankoffer">
+                            <div id="faltu">
+                                <p>2 Bank Offers</p>
+                                <p>Get Discount On Payment Modes</p>
+                            </div>
+                            <div id="bankdetails">
+                                <div>
+                                    <div class="bank1st">
+                                        <img src="https://n2.sdlcdn.com/imgs/e/o/f/default-ecb09.png"/>
+                                    </div>
+                                    <div class="bank2nd">
+                                        <h6>15% Instant Discount</h6>
+                                        <p>Using AU Small Finance Bank Debit & Credit</p>
+                                        <p>Rs. 191 Off</p>
+                                    </div>
+                                    <div class="bank3rd">
+                                        <input type="radio"/>
+                                        <p>TnC</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bank1st">
+                                        <img src="https://n2.sdlcdn.com/imgs/e/o/f/default-ecb09.png"/>
+                                    </div>
+                                    <div class="bank2nd">
+                                        <h6>20% Instant Discount</h6>
+                                        <p>Using Ujjivan Debit Cards</p>
+                                        <p>Rs. 150 Off</p>
+                                    </div>
+                                    <div class="bank3rd">
+                                        <input type="radio"/>
+                                        <p>TnC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   
+                        <div id="dompayment"></div>
+                    </div>
+                </div>
+              
+                
+            </div>
+            
+            <div id="cartdetails"></div>
+        </div>
+    </center>
+
+</body>
+
+</html>
+<script>
+let showdetails= document.getElementById("dompayment")
+
+document.getElementById("credit").addEventListener("click", ()=>{
+creditdetails()
+})
+function creditdetails(event){
+    showdetails.innerHTML=null
+    //console.log("hiii")
+    let head=document.createElement("h5")
+    head.innerText="Pay using Credit Cards"
+    head.setAttribute("id","type")
+    let br= document.createElement("div")
+    br.setAttribute("class","number")
+
+    let name=document.createElement("p")
+    name.innerText="Card Number"
+
+    let nameinput=document.createElement("input")
+    nameinput.placeholder="Enter Card Number"
+
+    let fdiv=document.createElement("div")
+    fdiv.setAttribute("class","fdiv")
+    let mdiv=document.createElement("div")
+    mdiv.setAttribute("class","mdiv")
+    let maindiv=document.createElement("div")
+    maindiv.setAttribute("class","maindiv")
+    let ldiv=document.createElement("div")
+    ldiv.setAttribute("class","ldiv")
+
+    let expiry=document.createElement("p")
+    expiry.innerText="Expiry Date"
+
+    let month=document.createElement("input")
+    month.placeholder="MM"
+
+    let year=document.createElement("input")
+    year.placeholder="year"
+
+    let cvv=document.createElement("p")
+    cvv.innerText="CVV"
+   
+
+   
+    let cvvinput=document.createElement("input")
+    cvvinput.placeholder="CVV"
+
+    let button= document.createElement("button")
+    button.setAttribute("id","paybutton")
+    button.innerText="PAY"
+    let trustpay=document.createElement("h4")
+
+    
+    trustpay.innerText="TrustPay: 100% Payment Protection Easy Returns Policy"
+    trustpay.setAttribute("id","trusttext")
+    
+
+
+    br.append(name,nameinput)
+
+
+    mdiv.append(month,year)
+    ldiv.append(cvv,cvvinput)
+    fdiv.append(expiry)
+    maindiv.append(fdiv,mdiv,ldiv)
+    showdetails.append(head,br,maindiv,button,trustpay)
+}
+
+</script>
