@@ -26,41 +26,6 @@
             <div class="sidebar">
                 <ul class="top-category-menu category">
                     <li class="top-category">TOP CATEGORIES</li>
-                    <li>
-                        <img
-                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
-                            alt="Men's Fashion"
-                        />
-                        <p>Men's Fashion</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
-                            alt="Women's Fashion"
-                        />
-                        <p>Women's Fashion</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
-                            alt="Home & Kitchen"
-                        />
-                        <p>Home & Kitchen</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
-                            alt="Toys, Kid's Fashion"
-                        />
-                        <p>Toys, Kid's Fashion</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://media.istockphoto.com/photos/sometimes-the-streets-of-the-city-are-my-inspiration-picture-id694450186?b=1&k=20&m=694450186&s=170667a&w=0&h=0tLe-BgdfnU74C575qgcknZ0oYwGin6JZqf5Q9jLv94="
-                            alt="Beauty & Health"
-                        />
-                        <p>Beauty & Health</p>
-                    </li>
                 </ul>
                 <ul class="more-categories-menu category">
                     <li class="more-categories">MORE CATEGORIES</li>
@@ -83,9 +48,13 @@
                     </div>
                 </div>
             </div>
+            <div id="sidebar-popup"></div>
+            <!-- <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div> -->
 
             <!-- carousel -->
-
             <div class="carousel">
                 <!-- image slider start -->
                 <div class="slider">
@@ -145,7 +114,6 @@
                 </div>
                 <!-- image slider end -->
             </div>
-
             <!-- trending products -->
 
             <div class="trending">
@@ -708,6 +676,12 @@
             list.style.display = "none";
         }
     });
+    // CODE for products list ****
+    import getData from './scripts/getData.js'
+    let data = await getData();
+    import category from './index.js';
+    let main = document.querySelector("#sidebar-popup");
+    console.log(category(data,main));
 </script>
 
 <script type="text/javascript">
@@ -724,3 +698,4 @@
 </script>
 
 <!-- <script src='/components/ham.js'></script> -->
+<script src="./index.js"></script>
