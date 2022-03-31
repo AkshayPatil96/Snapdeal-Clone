@@ -42,7 +42,7 @@
             <div>Delivery Charge :  Rs. 50</div>
         </div>
         <div>
-            <button id="pay" onclick="window.location.href='../checkout/checkout.html'"></button>
+            <button id="pay" onclick="window.location.href='../checkout/1stpage.html'"></button>
         </div>
     </div>
     
@@ -53,10 +53,25 @@
 
 <script type="module">
     let header =  document.querySelector("#navbar");
-    import navbar from "../components/navbar.js";
+    import {navbar} from "../components/navbar.js";
 
     // console.log(navbar);
 
     header.innerHTML = navbar();
+
+
+    var btn1 = document.querySelector(".user");
+
+    var list = document.querySelector(".ham");
+
+    list.style.display = "none";
+
+    btn1.addEventListener("click", function () {
+        if (list.style.display == "none") {
+            list.style.display = "block";
+        } else {
+            list.style.display = "none";
+        }
+    });
     
 </script>
