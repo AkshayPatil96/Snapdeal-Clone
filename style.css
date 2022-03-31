@@ -317,3 +317,17 @@
 #radio4:checked ~ .navigation-auto .auto-btn4 {
     background: #40d3dc;
 }
+.fa-cart-shopping{
+    position: relative;
+}
+
+.fa-cart-shopping>span{
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 10px;
+    padding: 3px;
+    position: absolute;
+    right: -7px;
+    top: -13px;
+    color: #333;
+}
