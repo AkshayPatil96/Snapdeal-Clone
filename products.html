@@ -99,6 +99,7 @@
                 <div id="product-type"></div>
                 <div id="sortby-dropdown">Sort by:
                     <select id="select-sort">
+                        <option value=""></option>
                         <option value="ltoh">Price Low To High</option>
                         <option value="htol">High Low To Low</option>
                     </select>
@@ -136,19 +137,32 @@
     });
 
     let item = JSON.parse(localStorage.getItem("item"));
-    console.log(item);
-    item.sort((a,b)=>{
-        return a.price-b.price;
+
+    let selectSort= document.getElementById("select-sort")
+    selectSort.addEventListener("click",()=>{
+            
+            if(selectSort.value==="ltoh"){
+                item.sort((a,b)=>{
+                    return a.price-b.price;
+                })
+                append(item)
+            }else if(selectSort.value==="htol"){
+                item.sort((a,b)=>{
+                    return b.price-a.price;
+                })
+                append(item)
+            }     
     })
-    // for(let i=0;i<item.length;i++){
-
-    // }
     let FashionName = localStorage.getItem("Fashion");
-
     let append = (data) => {
+        document.getElementById("product-bar").innerHTML=null;
         document.getElementById("product-type").innerText=FashionName;
         data.map((elem) => {
             let div = document.createElement("div");
+            div.addEventListener("click",()=>{
+                preview(elem);
+                window.location.href="preview.html"
+            })
             let img = document.createElement("img");
             img.src = elem.image;
             let name = document.createElement("p");
@@ -179,5 +193,9 @@
         })
     }
     append(item);
+
+    let preview = (elem)=>{
+        localStorage.setItem("preview",JSON.stringify(elem))
+    }
 
 </script>

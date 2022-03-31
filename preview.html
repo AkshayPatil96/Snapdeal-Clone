@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapdeal preview</title>
+    <link rel="stylesheet" href="/components/navbar.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://kit.fontawesome.com/9d6433328b.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #preview-root {
+        display: flex;
+        background: #ffffff;
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    .devider {
+        width: 1px;
+        background-color: #bbbbbb;
+    }
+
+    #preveiw-product-image {
+        width: 40%;
+    }
+
+    #preveiw-product-image>div>img {
+        width: 100%;
+        padding: 25px;
+    }
+
+    #preview-product-details {
+        padding: 25px;
+    }
+
+    #preview-product-details>div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #preview-product-details>p {
+        color: #333333;
+        text-overflow: ellipsis;
+        line-height: 27px;
+        overflow: hidden;
+        font-size: 20px;
+    }
+
+    #preview-root .sizeDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 50%;
+        margin-bottom: 20px;
+        color: #5a5a59;
+    }
+
+    #preview-root .colorDiv {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 50%;
+        color: #5a5a59;
+    }
+
+    #preview-root .colorDiv>img {
+        width: 80px;
+        height: 95px;
+        border: 2px solid #e6e6e6;
+        border-radius: 3px;
+        padding: 5px;
+    }
+
+    #preview-root .sizeDiv>div:last-child {
+        border: 1px solid grey;
+        padding: 0 5px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin: auto;
+        margin-left: 0;
+
+    }
+
+    #preview-root .sizeDiv>div:last-child:hover {
+        background: grey;
+        color: white;
+    }
+
+    #preview-root .rating {
+        display: flex;
+        gap: 20px;
+    }
+
+    #preview-root .rating>p>span,.ask{
+        color: #25a8ed;
+    }
+
+    #priceDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #priceDiv>span:first-child {
+        color: #bbbbbb;
+        font-size: 15px;
+        text-decoration: line-through;
+        line-height: 15px;
+        margin-bottom: 3px;
+    }
+
+    #priceDiv>span:last-child {
+        font-size: 23px;
+        color: #ff2341;
+    }
+
+    hr {
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #bbbbbb;
+    }
+
+    #AddToCartDiv {
+        padding: 20px;
+        /* border: 1px solid red; */
+    }
+
+    #AddToCartDiv>button {
+        font-size: 15px;
+        border-color: #333;
+        background: #333;
+        border-radius: 3px;
+        line-height: 36px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        letter-spacing: 0.5px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 5px 10px;
+    }
+
+    #AddToCartDiv>button:last-child {
+        background-color: #e40046;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <!-- navbar -->
+    <div id="header"></div>
+    <div id="preview-root">
+        <div id="preveiw-product-image"></div>
+        <div class="devider"></div>
+        <div id="preview-product-details"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
+
+
+<script type="module">
+    import { navbar, footer } from "./components/navbar.js";
+
+    let header = document.querySelector("#header");
+    header.innerHTML = navbar();
+
+    let foot = document.querySelector("#footer");
+    foot.innerHTML = footer();
+
+    var btn1 = document.querySelector(".user");
+
+    var list = document.querySelector(".ham");
+
+    list.style.display = "none";
+
+    btn1.addEventListener("click", function () {
+        if (list.style.display == "none") {
+            list.style.display = "block";
+        } else {
+            list.style.display = "none";
+        }
+    });
+</script>
+<script type="module" src="./scripts/preview.js"></script>
