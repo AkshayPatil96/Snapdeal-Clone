@@ -210,10 +210,8 @@
   position: relative;
 }
 #sidebar-popup{
-  width: 200px;
-  height: 200px;
   background:#f7f7f7;
-  padding: 5px;
+  padding: 20px;
   position: absolute;
   left: 300px;
   display: none;
