@@ -76,6 +76,7 @@ let appendPreview = (data) => {
     addTocart.innerText = "ADD TO CART";
     addTocart.addEventListener("click", () => {
         let addToCart = JSON.parse(localStorage.getItem("addToCart")) || [];
+        data.qty=1;
         addToCart.push(data);
         localStorage.setItem("addToCart", JSON.stringify(addToCart))
         counter++;

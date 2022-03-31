@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/components/navbar.css" />
+    <link rel="stylesheet" href="/components/footer.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9d6433328b.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #order {
+        /* border: 1px solid black; */
+        /* padding: 10px; */
+        box-sizing: border-box;
+        margin: auto;
+        width: 400px;
+        height: 200px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 20px;
+        background-color: rgb(147, 192, 192);
+        /* line-height: 40px; */
+      }
+      h1,
+      h4 {
+        margin-bottom: 20px;
+      }
+
+      button {
+        width: 150px;
+        height: 30px;
+        background-color: rgb(140, 140, 177);
+        border: none;
+        border-radius: 15px;
+        font-weight: bolder;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div id="order">
+      <h1>AWESOME !</h1>
+      <h4>
+        your booking has been confirmed <br />
+        check your email for details
+      </h4>
+      <button>OK</button>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>
+
+<script type="module">
+  import { navbar, footer } from "./components/navbar.js";
+  console.log(navbar);
+  let header = document.querySelector("#header");
+  header.innerHTML = navbar();
+
+  let foot = document.querySelector("#footer");
+  foot.innerHTML = footer();
+  var btn1 = document.querySelector(".user");
+
+  var list = document.querySelector(".ham");
+
+  list.style.display = "none";
+
+  btn1.addEventListener("click", function () {
+    if (list.style.display == "none") {
+      list.style.display = "block";
+    } else {
+      list.style.display = "none";
+    }
+  });
+</script>
