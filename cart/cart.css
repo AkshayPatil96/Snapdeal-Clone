@@ -1,0 +1,99 @@
+body{
+
+    font-family: sans-serif;
+}
+
+#cart{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+
+h3{
+    line-height: 34px;
+    font-family: "font-regular";
+    font-weight: bolder;
+    font-size: 38px;
+    color: #5a5a59;
+    padding-top: 80px;
+    /* position: fixed; */
+}
+
+table{
+    padding-bottom: 100px;
+    padding-top: 20px;
+}
+
+th{
+    width: 200px;
+    background-color: grey;
+    height: 40px;
+}
+
+thead{
+    padding-top: 100px;
+    /* position: fixed; */
+}
+
+
+
+#detail{
+    width: 400px;
+}
+
+td{
+    margin: auto;
+    text-align: center;
+}
+
+hr{
+    width: 600%;
+}
+
+#subtotal{
+    padding-left: 70px;
+}
+
+.d5{
+    text-align: center;
+    margin-top: 65px;
+    font-size: 16px;
+}
+
+#box{
+    width: 100%;
+    height: 5px;
+    background-color: #5a5a59;
+}
+
+button{
+    background-color: #5a5a5959;
+    border: 1px solid black;
+    font-weight: bold;
+    width: 100px;
+    border-radius: 30px;
+}
+
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #222222;
+    color: white;
+    display: flex;
+    font-weight: normal;
+}
+
+#footer>div{
+    width: 20%;
+    margin: auto;
+}
+
+#pay{
+    width: 100%;
+    height: 50px;
+    background-color: #E40046;
+    color: white;
+    font-weight: bold;
+}

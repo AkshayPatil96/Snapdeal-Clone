@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <script src="https://kit.fontawesome.com/e83fe8687f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+    <div id="cart">
+
+        <h3>Shopping Cart</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th id="detail">Item Details</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+                
+        </table>
+    </div>
+    <div id="footer">
+        <div>
+            <img src="Capture.PNG" alt="">
+        </div>
+        <div id="subtotal">
+            <div id="total"></div>
+            <br>
+            <div>Delivery Charge :  Rs. 50</div>
+        </div>
+        <div>
+            <button id="pay" onclick="window.location.href='../checkout/checkout.html'"></button>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script src="cart.js"></script>
+
+<script type="module">
+    let header =  document.querySelector("#navbar");
+    import navbar from "../components/navbar.js";
+
+    // console.log(navbar);
+
+    header.innerHTML = navbar();
+    
+</script>
