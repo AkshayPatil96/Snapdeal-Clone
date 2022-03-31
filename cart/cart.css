@@ -22,11 +22,13 @@ h3{
     color: #5a5a59;
     padding-top: 80px;
     /* position: fixed; */
+    margin-left: 70px;
 }
 
 table{
-    padding-bottom: 100px;
+    padding-bottom: 150px;
     padding-top: 20px;
+    margin: auto;
 }
 
 th{

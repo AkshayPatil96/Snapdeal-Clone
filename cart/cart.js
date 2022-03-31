@@ -51,7 +51,7 @@ const displayData = (items) =>{
         var del = document.createElement("i");
         del.className="fa fa-trash";
         del.addEventListener("click",function(){
-            del(index);
+            dlt(index);
         });
 
         d2.append(title,del);
@@ -128,7 +128,7 @@ const remove1 =(index) =>{
     displaytotal();
 }
 
-const del =(index) =>{
+const dlt =(index) =>{
     cartArr.splice(index,1);
     localStorage.setItem("addToCart",JSON.stringify(cartArr));
     displayData(cartArr);
