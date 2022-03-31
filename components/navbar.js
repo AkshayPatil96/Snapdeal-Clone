@@ -1,6 +1,5 @@
-function navbar() {
-    return `<div class="navbar">
-            <div class="top">
+function top () {
+    return `<div class="top">
                 <div><p>Brand Waali Quality. Bazaar waali Deal!</p></div>
                 <div>
                     <ul>
@@ -14,7 +13,11 @@ function navbar() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div>`;
+}
+
+function navbar() {
+    return `<div class="navbar">
             <div class="nav">
                 <div class="left">
                     <a href=""
@@ -243,4 +246,4 @@ function footer() {
         </div>`;
 }
 
-export { navbar, footer };
+export { top, navbar, footer };

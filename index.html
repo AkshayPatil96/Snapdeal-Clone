@@ -14,6 +14,10 @@
         <title>Snapdeal</title>
     </head>
     <body>
+        <!-- Top bar -->
+
+        <div id="top"></div>
+
         <!-- navbar -->
 
         <div id="header"></div>
@@ -21,8 +25,8 @@
         <!-- main body -->
 
         <div class="container">
-            <!-- sidebar -->
 
+            <!-- sidebar -->
             <div class="sidebar">
                 <ul class="top-category-menu category">
                     <li class="top-category">TOP CATEGORIES</li>
@@ -49,10 +53,6 @@
                 </div>
             </div>
             <div id="sidebar-popup"></div>
-            <!-- <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div> -->
 
             <!-- carousel -->
             <div class="carousel">
@@ -114,8 +114,8 @@
                 </div>
                 <!-- image slider end -->
             </div>
-            <!-- trending products -->
 
+            <!-- trending products -->
             <div class="trending">
                 <p>TRENDING PRODUCTS</p>
                 <div class="trending-products">
@@ -203,9 +203,9 @@
                     </div>
                 </div>
             </div>
-
-            <!-- more products -->
         </div>
+        
+        <!-- more products -->
         <div class="more-products">
             <div class="more">
                 <div class="more-img">
@@ -655,33 +655,41 @@
 </html>
 
 <script type="module">
-    import { navbar, footer } from "./components/navbar.js";
+    import { top, navbar, footer } from "./components/navbar.js";
 
+    // appending top part
+    let top_part = document.querySelector("#top");
+    top_part.innerHTML = top();
+    
+    // appending navbar part
     let header = document.querySelector("#header");
     header.innerHTML = navbar();
-
+    
+    // appending footer part
     let foot = document.querySelector("#footer");
     foot.innerHTML = footer();
 
-    var btn1 = document.querySelector(".user");
+    var user_click = document.querySelector(".user");
 
-    var list = document.querySelector(".ham");
+    var user_list = document.querySelector(".ham");
 
-    list.style.display = "none";
+    user_list.style.display = "none";
 
-    btn1.addEventListener("click", function () {
-        if (list.style.display == "none") {
-            list.style.display = "block";
+    user_click.addEventListener("click", function () {
+        if (user_list.style.display == "none") {
+            user_list.style.display = "block";
         } else {
-            list.style.display = "none";
+            user_list.style.display = "none";
         }
     });
-    // CODE for products list ****
-    import getData from './scripts/getData.js'
+
+    //**** CODE for products list ****
+
+    import getData from "./scripts/getData.js";
     let data = await getData();
-    import category from './index.js';
+    import category from "./index.js";
     let main = document.querySelector("#sidebar-popup");
-    console.log(category(data,main));
+    console.log(category(data, main));
 </script>
 
 <script type="text/javascript">
