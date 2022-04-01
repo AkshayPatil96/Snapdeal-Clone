@@ -47,7 +47,11 @@ function creditdetails(event) {
     cvvinput.placeholder = "CVV"
 
     let button = document.createElement("button")
+
     button.setAttribute("id", "paybutton")
+    button.addEventListener("click",function(){
+        window.location.href="../sucessfull.html"
+    })
     button.innerText = "PAY"
     let trustpay = document.createElement("h4")
 
