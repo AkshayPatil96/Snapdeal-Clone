@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/components/footer.css" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9d6433328b.js" crossorigin="anonymous"></script>
 </head>
 <style>
@@ -65,9 +65,11 @@
         /* border: 1px solid black; */
         padding: 8px;
     }
-    #product-bar>div:hover{
+
+    #product-bar>div:hover {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
+
     #product-bar>div>p {
         margin-bottom: 20px;
         color: #666;
@@ -78,6 +80,7 @@
         overflow: hidden;
         font-weight: 700;
     }
+
     #product-bar>div>img {
         width: 100%;
     }
@@ -87,16 +90,19 @@
         color: #d3c6bf;
         margin-right: 10px;
     }
-    .sidebar{
+
+    .sidebar {
         padding: 15px;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    .sidebar>#filters>#byprice{
+
+    .sidebar>#filters>#byprice {
         display: flex;
     }
-    .sidebar>#filters>#byprice>input{
+
+    .sidebar>#filters>#byprice>input,.filterBtn {
         width: 30%;
         padding: 5px;
         font-size: 14px;
@@ -105,16 +111,32 @@
         margin-top: 20px;
         border-radius: 3px;
     }
-    .sidebar>#filters>#byprice>input[type="submit"]{
+
+    .sidebar>#filters>#byprice>input[type="submit"],.filterBtn {
         background-color: #ffffff;
     }
-    .sidebar>#filters>#byprice>input::placeholder{
+    .sidebar>#filters>#byprice>input[type="submit"]:hover,.filterBtn:hover{
+        background-color: #d3c6bf;
+    }
+    .sidebar>#filters>#byprice>input::placeholder {
         font-size: 10px;
     }
-    hr{
+
+    hr {
         border: none;
         height: 1px;
         background: #e8e8e8;
+    }
+
+    .ratingstar {
+        color: gold;
+    }
+
+    #filters>p {
+        font-size: 14px;
+        font-weight: bold;
+        color: #5a5a59;
+        margin: 30px 0 0 0;
     }
 </style>
 
@@ -131,8 +153,34 @@
                 <div id="byprice">
                     <input type="number" placeholder="Low" id="low">
                     <input type="number" placeholder="High" id="high">
-                    <input type="submit" value="GO">
+                    <input type="submit" value="GO" id="sortBYPrice">
                 </div>
+                <p>Customer Rating</p>
+                <hr>
+                <div id="byratin">
+                    <form id="sortByRating">
+                        <!-- <div> -->
+                        <input type="radio" id="contactChoice1" name="rating" value="5">
+                        <label class="ratingstar" for="contactChoice1">★★★★★</label>
+                        <br>
+                        <input type="radio" id="contactChoice2" name="rating" value="4">
+                        <label class="ratingstar" for="contactChoice2">★★★★</label>
+                        <br>
+                        <input type="radio" id="contactChoice3" name="rating" value="3">
+                        <label class="ratingstar" for="contactChoice3">★★★</label>
+                        <br>
+                        <input type="radio" id="contactChoice3" name="rating" value="2">
+                        <label class="ratingstar" for="contactChoice3">★★</label>
+                        <br>
+                        <input type="radio" id="contactChoice3" name="rating" value="1">
+                        <label class="ratingstar" for="contactChoice3">★</label>
+                        <!-- </div> -->
+                        <div>
+                            <button type="submit" class="filterBtn" value="GO">GO</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
         <div class="products">
@@ -179,30 +227,52 @@
 
     let item = JSON.parse(localStorage.getItem("item"));
 
-    let selectSort= document.getElementById("select-sort")
-    selectSort.addEventListener("click",()=>{
-            
-            if(selectSort.value==="ltoh"){
-                item.sort((a,b)=>{
-                    return a.price-b.price;
-                })
-                append(item)
-            }else if(selectSort.value==="htol"){
-                item.sort((a,b)=>{
-                    return b.price-a.price;
-                })
-                append(item)
-            }     
+    let selectSort = document.getElementById("select-sort")
+    selectSort.addEventListener("click", () => {
+
+        if (selectSort.value === "ltoh") {
+            item.sort((a, b) => {
+                return a.price - b.price;
+            })
+            append(item)
+        } else if (selectSort.value === "htol") {
+            item.sort((a, b) => {
+                return b.price - a.price;
+            })
+            append(item)
+        }
     })
+
+    let sortByPrice = document.getElementById("sortBYPrice");
+    sortByPrice.addEventListener("click", () => {
+        let lowPrice = document.getElementById("low").value
+        let highPrice = document.getElementById("high").value
+        let newItem = item.filter((elements) => {
+            return Number(elements.price) > lowPrice && Number(elements.price) < highPrice;
+        })
+        append(newItem);
+
+    })
+    let sortByRating = document.getElementById("sortByRating");
+    sortByRating.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let formData = new FormData(sortByRating)
+        let value = formData.get("rating")
+        let newItem = item.filter((elements) => {
+            return Number(elements.rating) >= Number(value)
+        })
+        append(newItem);
+    })
+
     let FashionName = localStorage.getItem("Fashion");
     let append = (data) => {
-        document.getElementById("product-bar").innerHTML=null;
-        document.getElementById("product-type").innerText=FashionName;
+        document.getElementById("product-bar").innerHTML = null;
+        document.getElementById("product-type").innerText = FashionName;
         data.map((elem) => {
             let div = document.createElement("div");
-            div.addEventListener("click",()=>{
+            div.addEventListener("click", () => {
                 preview(elem);
-                window.location.href="preview.html"
+                window.location.href = "preview.html"
             })
             let img = document.createElement("img");
             img.src = elem.image;
@@ -235,8 +305,8 @@
     }
     append(item);
 
-    let preview = (elem)=>{
-        localStorage.setItem("preview",JSON.stringify(elem))
+    let preview = (elem) => {
+        localStorage.setItem("preview", JSON.stringify(elem))
     }
     
 

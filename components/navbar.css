@@ -138,7 +138,7 @@ body {
 }
 
 .nav .right .ham .a:hover {
-    width: 100%;
+    width: 90%;
     background-color: #222222;
     display: flex;
     align-items: center;

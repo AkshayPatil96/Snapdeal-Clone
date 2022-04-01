@@ -84,7 +84,6 @@ let appendPreview = (data) => {
         count.innerHTML = counter;
         localStorage.setItem("count", counter);
         cart.append(count);
-
     })
     let buyNow = document.createElement("button");
     let sdIcon = document.createElement("img")
