@@ -1,6 +1,5 @@
 
-    let getData = async()=>{
-        let url="https://profound-donut-01ca79.netlify.app/ecom.json"
+    let getData = async(url)=>{
         try {
             let res = await fetch(url);
             let response = await res.json();

@@ -686,10 +686,17 @@
     //**** CODE for products list ****
 
     import getData from "./scripts/getData.js";
-    let data = await getData();
+    let url="https://profound-donut-01ca79.netlify.app/ecom.json"
+    let data = await getData(url);
     import category from "./index.js";
     let main = document.querySelector("#sidebar-popup");
-    console.log(category(data, main));
+    category(data, main)
+    // let trenUrl="https://profound-donut-01ca79.netlify.app/trending.json"
+    // let trending = await getData(trenUrl)
+    // console.log(trending);
+    // let trendMain=document.querySelector(".trnd")
+    // console.log(trendMain);
+    
 </script>
 
 <script type="text/javascript">
