@@ -72,7 +72,7 @@ function appendD(trendingData, parent) {
             let send = [];
             send.push(element);
             localStorage.setItem("preview", JSON.stringify(send));
-            window.location.href = "./preview.html";
+            // window.location.href = "./preview.html";
         });
 
         let img_div = document.createElement("div");
