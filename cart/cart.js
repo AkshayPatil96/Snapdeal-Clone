@@ -1,32 +1,32 @@
-let cartArr = [];
+let cartArr = JSON.parse(localStorage.getItem("addToCart"));
 
-function prod(i,t,p,q){
-    this.img = i;
-    this.title = t;
-    this.price = p;
-    this.qty = q
-}
+// function prod(i,t,p,q){
+//     this.img = i;
+//     this.title = t;
+//     this.price = p;
+//     this.qty = q
+// }
 
-let prod1 = new prod("https://n3.sdlcdn.com/imgs/k/e/u/130x152/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg",
-"Veirdo - 100% Cotton Regular Fit Green Men's T-Shirt ( Pack of 1 )", 309, 1);
-cartArr.push(prod1);
+// let prod1 = new prod("https://n3.sdlcdn.com/imgs/k/e/u/130x152/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg",
+// "Veirdo - 100% Cotton Regular Fit Green Men's T-Shirt ( Pack of 1 )", 309, 1);
+// cartArr.push(prod1);
 
-let prod2 = new prod("https://n2.sdlcdn.com/imgs/k/d/7/130x152/Aika-Black-Net-Chaniya-Choli-SDL265173587-1-f7a38.jpeg",
-"Aika Black Net Chaniya Choli Semi Stitched Lehenga Single", 675, 1);
-cartArr.push(prod2);
+// let prod2 = new prod("https://n2.sdlcdn.com/imgs/k/d/7/130x152/Aika-Black-Net-Chaniya-Choli-SDL265173587-1-f7a38.jpeg",
+// "Aika Black Net Chaniya Choli Semi Stitched Lehenga Single", 675, 1);
+// cartArr.push(prod2);
 
-let prod3 = new prod("https://n2.sdlcdn.com/imgs/j/v/d/130x152/1-3d341.jpg",
-"boAt Airdopes 131/138 Twin Wireless Earbuds with IWP Technology, Bluetooth V5.0, Immersive Audio, Up to 15H Total Playback, Instant Voice Assistant and Type-C Charging,Bluetooth Earphone (Active Black)",
-1299, 1)
-cartArr.push(prod3);
+// let prod3 = new prod("https://n2.sdlcdn.com/imgs/j/v/d/130x152/1-3d341.jpg",
+// "boAt Airdopes 131/138 Twin Wireless Earbuds with IWP Technology, Bluetooth V5.0, Immersive Audio, Up to 15H Total Playback, Instant Voice Assistant and Type-C Charging,Bluetooth Earphone (Active Black)",
+// 1299, 1)
+// cartArr.push(prod3);
 
-let prod4 = new prod("https://n1.sdlcdn.com/imgs/j/s/s/130x152/viv-Lifestyle-Brown-Casual-Shoes-SDL018192741-1-49e97.jpeg",
-"viv Lifestyle Brown Casual Shoes",625,1);
-cartArr.push(prod4);
+// let prod4 = new prod("https://n1.sdlcdn.com/imgs/j/s/s/130x152/viv-Lifestyle-Brown-Casual-Shoes-SDL018192741-1-49e97.jpeg",
+// "viv Lifestyle Brown Casual Shoes",625,1);
+// cartArr.push(prod4);
 
-let prod5 = new prod("https://n3.sdlcdn.com/imgs/k/e/u/130x152/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg",
-"Veirdo - 100% Cotton Regular Fit Green Men's T-Shirt ( Pack of 1 )", 309, 1);
-cartArr.push(prod5);
+// let prod5 = new prod("https://n3.sdlcdn.com/imgs/k/e/u/130x152/Veirdo-100-Cotton-Regular-Fit-SDL302182620-1-f0fac.jpg",
+// "Veirdo - 100% Cotton Regular Fit Green Men's T-Shirt ( Pack of 1 )", 309, 1);
+// cartArr.push(prod5);
 
 
 console.log(cartArr);
@@ -35,26 +35,26 @@ const displayData = (items) =>{
 
     document.querySelector("tbody").innerHTML = "";
 
-    items.forEach(({ img, title, price, qty },index) =>{
+    items.forEach(({ image, name, price, qty },index) =>{
 
         let div = document.createElement("tr");
 
         let d1 = document.createElement("td");
         let pic = document.createElement("img");
-        pic.src = img;
+        pic.src = image;
         d1.append(pic);
 
         let d2 = document.createElement("td");
-        let name = document.createElement("p");
-        name.innerText = title;
+        let title = document.createElement("p");
+        title.innerText = name;
 
         var del = document.createElement("i");
         del.className="fa fa-trash";
         del.addEventListener("click",function(){
-            del(index);
+            dlt(index);
         });
 
-        d2.append(name,del);
+        d2.append(title,del);
 
         let d3 = document.createElement("td");
         let rate = document.createElement("p");
@@ -113,7 +113,7 @@ const add1 =(index) =>{
     cartArr[index].qty++;
     // console.log(cartArr)
 
-    localStorage.setItem("cartItems",JSON.stringify(cartArr));
+    localStorage.setItem("addToCart",JSON.stringify(cartArr));
     displayData(cartArr);
     displaytotal();
 }
@@ -123,14 +123,14 @@ const remove1 =(index) =>{
     cartArr[index].qty--;
     // console.log(cartArr)
 
-    localStorage.setItem("cartItems",JSON.stringify(cartArr));
+    localStorage.setItem("addToCart",JSON.stringify(cartArr));
     displayData(cartArr);
     displaytotal();
 }
 
-const del =(index) =>{
+const dlt =(index) =>{
     cartArr.splice(index,1);
-    localStorage.setItem("cartItems",JSON.stringify(cartArr));
+    localStorage.setItem("addToCart",JSON.stringify(cartArr));
     displayData(cartArr);
     displaytotal();
 }
