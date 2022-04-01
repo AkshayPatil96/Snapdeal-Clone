@@ -1,13 +1,8 @@
 
 
 .container {
-<<<<<<< Updated upstream
-    margin:20px 5%;
-    /* margin-top: 12%; */
-=======
     margin: 5%;
     margin-top: 2%;
->>>>>>> Stashed changes
     display: grid;
     grid-template-columns: 20% 80%;
     row-gap: 2rem;
@@ -73,6 +68,8 @@
 .trnd {
     background: #fff;
     display: flex;
+    border: 1px solid;
+    
 }
 
 .trending > p {
@@ -150,7 +147,7 @@
     flex-wrap: wrap;
     /* display: grid; */
     /* grid-template-columns: repeat(5, 1fr); */
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     gap: 1.5rem;
     margin: 2.5%;
