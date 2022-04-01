@@ -1,7 +1,7 @@
 
 
 .container {
-    margin: 5%;
+    margin:20px 5%;
     /* margin-top: 12%; */
     display: grid;
     grid-template-columns: 20% 80%;
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     border: 3px solid #ffffff;
-    padding: 0px 10px;
+    padding: 5px 10px;
 }
 
 .container .sidebar .category li:not(.top-category, .more-categories):hover {
@@ -40,7 +40,6 @@
     background-color: #f7f7f7;
     border: 3px solid #f7f7f7;
     border-left: 3px solid #e40046;
-    padding: 0px 10px;
     cursor: pointer;
 }
 
@@ -48,16 +47,16 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin: 5% 5% 5% 0;
+    margin-right: 10px;
 }
 
 .container .sidebar .top-category-menu li p {
-    font-size: 13px;
+    font-size: 12px;
     color: #888888;
 }
 
 .container .sidebar .more-categories-menu li {
-    font-size: 13px;
+    font-size: 12px;
     color: #888888;
 }
 
