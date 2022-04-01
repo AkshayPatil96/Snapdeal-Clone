@@ -131,7 +131,7 @@
                 <div id="byprice">
                     <input type="number" placeholder="Low" id="low">
                     <input type="number" placeholder="High" id="high">
-                    <input type="submit" value="GO">
+                    <input type="submit" value="GO" id="sortBYPrice">
                 </div>
             </div>
         </div>
@@ -194,6 +194,18 @@
                 append(item)
             }     
     })
+
+    let sortByPrice = document.getElementById("sortBYPrice");
+    sortByPrice.addEventListener("click",()=>{
+        let lowPrice=document.getElementById("low").value
+        let highPrice=document.getElementById("high").value
+        let newItem=item.filter((elements)=>{
+            return Number(elements.price)>lowPrice&&Number(elements.price)<highPrice;
+        })
+        append(newItem);
+
+    })
+
     let FashionName = localStorage.getItem("Fashion");
     let append = (data) => {
         document.getElementById("product-bar").innerHTML=null;
