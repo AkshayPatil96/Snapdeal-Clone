@@ -138,6 +138,28 @@
         color: #5a5a59;
         margin: 30px 0 0 0;
     }
+    @media screen and (max-width:500px) {
+        #product-bar {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #product-type {
+        font-size: 12px;
+    }
+    #sortby-dropdown {
+    padding: 5px;
+    font-size: 8px;
+    }
+    .sidebar {
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+    }
+    .sidebar>#filters>#byprice {
+    display: block;
+    }
+    }
 </style>
 
 <body>
