@@ -1,5 +1,4 @@
 let category = (data, main) => {
-    console.log(data);
     for (let e in data) {
         let element = document.querySelector(".top-category-menu");
         let li = document.createElement("li");

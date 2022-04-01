@@ -96,7 +96,7 @@ loginForm.addEventListener("submit", e => {
     if(flag==true){
         console.log("Login Sucess");
         alert("Login Sucessfully")
-        window.location.href='index.html';
+        window.location.href='../index.html';
     }else{
         console.log("Invalid Login");
         setFormMessage(loginForm, "error", "Invalid username or password")
