@@ -1,6 +1,6 @@
 // localStorage preview data
 let preview = JSON.parse(localStorage.getItem("preview"));
-console.log(preview);
+// console.log(preview);
 
 let cart = document.querySelector(".fa-cart-shopping")
 let count = document.createElement("span");
