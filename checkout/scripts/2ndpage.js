@@ -121,6 +121,9 @@ function debitdetails(event) {
 
     let button = document.createElement("button")
     button.setAttribute("id", "paybutton")
+    button.addEventListener("click",function(){
+        window.location.href="../sucessfull.html"
+    })
     button.innerText = "PAY"
     let trustpay = document.createElement("h4")
 
@@ -168,6 +171,9 @@ function netdetails(event) {
     let button = document.createElement("button")
     button.setAttribute("id", "paybutton")
     button.innerText = "MAKE PAYMENT"
+    button.addEventListener("click",function(){
+        window.location.href="../sucessfull.html"
+    })
     let trustpay = document.createElement("h4")
 
 
@@ -201,6 +207,9 @@ function coddetails(event) {
     let button = document.createElement("button")
     button.setAttribute("id", "paybutton")
     button.innerText = "PLACE COD ORDER"
+    button.addEventListener("click",function(){
+        window.location.href="../sucessfull.html"
+    })
     let trustpay = document.createElement("h4")
 
 
@@ -280,6 +289,9 @@ function giftdetails(event) {
     let apply=document.createElement("button")
     apply.setAttribute("id","apply")
     apply.innerText="APPLY"
+    apply.addEventListener("click",function(){
+        window.location.href="../sucessfull.html"
+    })
 
     let br2 = document.createElement("div")
     br2.setAttribute("class", "number")
@@ -319,6 +331,9 @@ let br=document.createElement("div")
     let button = document.createElement("button")
     button.setAttribute("id", "paybutton")
     button.innerText = "PAY"
+    button.addEventListener("click",function(){
+        window.location.href="../sucessfull.html"
+    })
     let trustpay = document.createElement("h4")
 
 
