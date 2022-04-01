@@ -103,6 +103,8 @@ const displaytotal = () =>{
     document.querySelector("#total").innerText = `Sub Total :   Rs. ${total}`
 
     document.querySelector("#pay").innerText = `PROCEED TO PAY ( Rs. ${total+50})`
+
+    localStorage.setItem("total",JSON.stringify(total+50))
 }
 
 displayData(cartArr);
@@ -134,6 +136,5 @@ const dlt =(index) =>{
     displayData(cartArr);
     displaytotal();
 }
-
 
 
