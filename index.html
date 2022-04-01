@@ -204,14 +204,15 @@
 
     import getData from "./scripts/getData.js";
 
-    let data = await getData();
+    let url = `https://profound-donut-01ca79.netlify.app/ecom.json`;
+
+    let data = await getData(url);
 
     import category from "./index.js";
 
     let main = document.querySelector("#sidebar-popup");
     console.log(category(data, main));
 
-    
     import { asyncData, appending, appendD } from "./fetch.js";
 
     let more_data = document.querySelector("#more-prod");
