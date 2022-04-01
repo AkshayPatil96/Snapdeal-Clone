@@ -142,7 +142,7 @@ margin-top: 10px;
 }
 #bankdetails>div{
 height: auto;
-width: 45%;
+width: 40%;
 background-color: #017E81;
 display: flex;
 justify-content: space-evenly;
@@ -241,4 +241,34 @@ color: #ffffff;
     margin-bottom: 15px;
     color:#e2e2e2;
     font-size: 19px;
+    border-radius: 6px;
+    /* float: left; */
+}
+.netclass{
+    height: 40px;
+    width:300px;
+    margin-left: 140px;
+    font-size: 19px;
+}
+#apply{
+    height: 45px;
+    width: 99px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #fffdfd !important;
+}
+#upiinput{
+    height: 45px;
+    width: 350px;
+    border-radius: 5px;
+    margin-left: -90px;
+    margin-right: 60px;
+    font-size: 16px;
+    font-style: inherit;
+}
+#verify{
+    height:45px;
+    width: 99px;
+    background-color: #333333;
+    color: #e2e2e2;
 }
