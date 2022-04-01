@@ -41,36 +41,6 @@ cartArr.forEach(function (el, i) {
     showcart.append(product)
 })
 
-////total data
-let total = document.getElementById("total")
-let deleverytotal = document.createElement("div")
-
-let totaldiv = document.createElement("div")
-totaldiv.setAttribute("class","displayflex")
-
-let totaldiv2 = document.createElement("div")
-totaldiv2.setAttribute("class","displayflex")
-
-let totaldivp = document.createElement("p")
-totaldivp.innerText = `Total`
-totaldivp.setAttribute("class","small")
-let totaldivrs = document.createElement("p")
-totaldivrs.innerText = `${localtotal}`
-totaldivrs.setAttribute("class","big")
-
-let totaldiv2p = document.createElement("p")
-totaldiv2p.innerText = `Delivery Charges`
-totaldiv2p.setAttribute("class","small")
-let totaldiv2rs = document.createElement("p")
-totaldiv2rs.innerText = `Free`
-totaldiv2rs.setAttribute("id","free")
-totaldiv.append(totaldivp, totaldivrs)
-totaldiv2.append(totaldiv2p, totaldiv2rs)
-deleverytotal.append(totaldiv, totaldiv2)
-
-total.append(deleverytotal)
-
-
 
 
 ////you pay
