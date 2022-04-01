@@ -3,6 +3,9 @@ let cartarea = document.getElementById("cartdetails")
 
 
 let cartArr = JSON.parse(localStorage.getItem("addToCart"));
+console.log(cartArr)
+let localtotal=localStorage.getItem("total");
+console.log(localtotal)
 
 
 let showcart = document.getElementById("product")
@@ -25,7 +28,7 @@ cartArr.forEach(function (el, i) {
     let qtyprice = document.createElement("div")
     qtyprice.setAttribute("class","displayflex")
     let quantity = document.createElement("p")
-    quantity.innerText = `Quantity:1`
+    quantity.innerText = `Quantity:${el.qty}`
     quantity.setAttribute("class","small")
 
     let price = document.createElement("p")
@@ -37,36 +40,6 @@ cartArr.forEach(function (el, i) {
     product.append(name, qtyprice)
     showcart.append(product)
 })
-
-////total data
-let total = document.getElementById("total")
-let deleverytotal = document.createElement("div")
-
-let totaldiv = document.createElement("div")
-totaldiv.setAttribute("class","displayflex")
-
-let totaldiv2 = document.createElement("div")
-totaldiv2.setAttribute("class","displayflex")
-
-let totaldivp = document.createElement("p")
-totaldivp.innerText = `Total`
-totaldivp.setAttribute("class","small")
-let totaldivrs = document.createElement("p")
-totaldivrs.innerText = `999`
-totaldivrs.setAttribute("class","big")
-
-let totaldiv2p = document.createElement("p")
-totaldiv2p.innerText = `Delivery Charges`
-totaldiv2p.setAttribute("class","small")
-let totaldiv2rs = document.createElement("p")
-totaldiv2rs.innerText = `Free`
-totaldiv2rs.setAttribute("id","free")
-totaldiv.append(totaldivp, totaldivrs)
-totaldiv2.append(totaldiv2p, totaldiv2rs)
-deleverytotal.append(totaldiv, totaldiv2)
-
-total.append(deleverytotal)
-
 
 
 
@@ -82,7 +55,7 @@ youpayp.innerText = `You Pay: `
 
 
 let youpayrs = document.createElement("h4")
-youpayrs.innerText = `Rs. 9999`
+youpayrs.innerText = `Rs. ${localtotal}`
 youpaydiv.append(youpayp, youpayrs)
 youpay.append(youpaydiv)
 

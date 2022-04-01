@@ -24,8 +24,8 @@
         /* padding: 10px; */
         box-sizing: border-box;
         margin: auto;
-        width: 400px;
-        height: 200px;
+        width: 500px;
+        height: 250px;
         padding: 10px;
         text-align: center;
         border-radius: 20px;
@@ -41,19 +41,55 @@
 
       button {
         width: 150px;
-        height: 30px;
+        height: 35px;
         background-color: rgb(140, 140, 177);
         border: none;
-        border-radius: 15px;
+        border-radius: 9px;
         font-weight: bolder;
         cursor: pointer;
       }
+      #upper {
+    height: 120px;
+/* padding: 0 0 20px 0; */
+overflow: visible !important;
+margin: 0 auto;
+background: #e40046;
+/* transform: translate(0, 0); */
+width: 100%;
+/* opacity: 1; */
+font: inherit;
+vertical-align: baseline;
+display:flex;
+justify-content: space-between;
+}
+#upper>div{
+margin: 20px;
+
+}
+p{
+color:rgb(255, 255, 255);
+font-size: 19px;
+margin-top: 15px;
+}
+#icon{
+height: 32px;
+margin-top: 15px;
+}
+
     </style>
 
     
   </head>
   <body>
     <div id="header"></div>
+    <div id="upper">
+        <div>
+            <img  id="icon"src="https://i3.sdlcdn.com/img/snapdeal/darwin/logo/sdLatestLogo.svg">
+        </div>
+        <div>
+            <p>100% Payment Protection, Easy Returns Policy</p>
+        </div>
+    </div>
   </div>
     <div id="order">
       <h1>AWESOME !</h1>
@@ -71,8 +107,8 @@
 <script type="module">
   import { navbar, footer } from "./components/navbar.js";
   console.log(navbar);
-  let header = document.querySelector("#header");
-  header.innerHTML = navbar();
+//   let header = document.querySelector("#header");
+//   header.innerHTML = navbar();
 
   let foot = document.querySelector("#footer");
   foot.innerHTML = footer();
@@ -89,4 +125,11 @@
       list.style.display = "none";
     }
   });
+
+
+
+
+  localStorage.removeItem("addToCart")
+  localStorage.removeItem("total")
+  localStorage.removeItem("count")
 </script>

@@ -104,7 +104,7 @@ const displaytotal = () =>{
 
     document.querySelector("#pay").innerText = `PROCEED TO PAY ( Rs. ${total+50})`
 
-    localStorage.setItem("total",JSON.stringify(total+50))
+    localStorage.setItem("total",(total+50))
 }
 
 displayData(cartArr);
