@@ -20,7 +20,7 @@ function appending(trendingData, parent) {
         box.addEventListener("click", () => {
             let send = [];
             send.push(element);
-            localStorage.setItem("previewing", JSON.stringify(send));
+            localStorage.setItem("preview", JSON.stringify(send));
             window.location.href = "./preview.html";
         });
 
@@ -71,8 +71,8 @@ function appendD(trendingData, parent) {
         box.addEventListener("click", () => {
             let send = [];
             send.push(element);
-            localStorage.setItem("previewing", JSON.stringify(send));
-            // window.location.href = "./preview.html";
+            localStorage.setItem("preview", JSON.stringify(send));
+            window.location.href = "./preview.html";
         });
 
         let img_div = document.createElement("div");
