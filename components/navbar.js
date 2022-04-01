@@ -68,7 +68,7 @@ function navbar() {
                         <div class="reg-log">
                             <p>If you are a new user</p>
                             <p>Register</p>
-                            <button>LOGIN</button>
+                            <button onclick="window.location.href='./signup_login/login.html'">LOGIN</button>
                         </div>
                     </div>
                 </div>
