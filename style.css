@@ -68,23 +68,22 @@
 .trnd {
     background: #fff;
     display: flex;
-    border: 1px solid;
-    
+    flex-wrap: wrap;    
 }
 
 .trending > p {
-    padding: 15px 10px;
+    padding: 10px 10px;
     font-size: 20px;
     font-weight: bold;
     color: #333333;
 }
 
 .box {
-    width: 250px;
+    width: 25%;
 }
 
 .box:hover {
-    width: 250px;
+    width: 25%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
 }
@@ -110,7 +109,7 @@
     box-sizing: border-box;
 }
 
-.detail-box p {
+.detail-box > p {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -124,10 +123,11 @@
     text-decoration: line-through;
     color: #bdbdbd;
     font-size: 13px;
+    margin-right: 2%;
 }
 
 .sale-price {
-    margin: 0 2%;
+    margin: 0 3%;
     color: #555555;
     font-size: 14px;
 }
