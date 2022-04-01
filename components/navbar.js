@@ -246,4 +246,7 @@ function footer() {
         </div>`;
 }
 
+
+
+
 export { top, navbar, footer };
