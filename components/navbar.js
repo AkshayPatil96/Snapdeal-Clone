@@ -1,4 +1,4 @@
-function top () {
+function top() {
     return `<div class="top">
                 <div><p>Brand Waali Quality. Bazaar waali Deal!</p></div>
                 <div>
@@ -20,7 +20,7 @@ function navbar() {
     return `<div class="navbar">
             <div class="nav">
                 <div class="left">
-                    <a href=""
+                    <a href="/index.html"
                         ><img
                             src="/components/logo/snapdeal-logo.png"
                             alt="Snapdeal logo"
@@ -41,9 +41,9 @@ function navbar() {
                     </button>
                 </div>
                 <div class="right">
-                    <div class="cart">
-                        <p>Cart</p>
-                        <i class="fa-solid fa-cart-shopping"></i>
+                    <div id="cart" class="cart" onclick="window.location.href='./cart/cart.html'">
+                    <p>Cart</p>
+                    <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                     <div class="pop-down">
                         <div id="user" class="user">
@@ -67,7 +67,7 @@ function navbar() {
                         <hr />
                         <div class="reg-log">
                             <p>If you are a new user</p>
-                            <p>Register</p>
+                            <p onclick="window.location.href='./signup_login/login.html'">Register</p>
                             <button onclick="window.location.href='./signup_login/login.html'">LOGIN</button>
                         </div>
                     </div>

@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    <div id="top"></div>
+
     <div id="navbar"></div>
     <div id="cart">
 
@@ -52,11 +54,14 @@
 <script src="cart.js"></script>
 
 <script type="module">
+
+    let tophead = document.querySelector("#top");
     let header =  document.querySelector("#navbar");
-    import {navbar} from "../components/navbar.js";
+    import {top, navbar} from "../components/navbar.js";
+
 
     // console.log(navbar);
-
+    tophead.innerHTML = top();
     header.innerHTML = navbar();
 
 

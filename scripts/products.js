@@ -41,8 +41,9 @@ let item = JSON.parse(localStorage.getItem("item"));
     let append = (data) => {
         document.getElementById("product-bar").innerHTML = null;
         document.getElementById("product-type").innerText = FashionName;
-        data.map((elem) => {
-            let div = document.createElement("div");
+        data.map((elem,index) => {  
+            if(index!=0){
+                let div = document.createElement("div");
             div.addEventListener("click", () => {
                 preview(elem);
                 window.location.href = "preview.html"
@@ -73,6 +74,8 @@ let item = JSON.parse(localStorage.getItem("item"));
             }
             div.append(img, name, pricediv, rating)
             document.getElementById("product-bar").append(div)
+            }
+            
 
         })
     }

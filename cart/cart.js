@@ -72,7 +72,12 @@ const displayData = (items) =>{
         let btn2 = document.createElement("button");
         btn2.innerText = "REMOVE";
         btn2.addEventListener("click",function(){
-            remove1(index);
+
+            if(qty > 1)
+            {
+                remove1(index);
+            }
+           
         })
 
         let btn3 = document.createElement("h4");
