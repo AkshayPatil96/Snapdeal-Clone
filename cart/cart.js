@@ -31,6 +31,10 @@ let cartArr = JSON.parse(localStorage.getItem("addToCart"));
 
 console.log(cartArr);
 
+let length = cartArr.length;
+
+document.querySelector("#h3").innerText = `Shopping Cart (${length} items)`
+
 const displayData = (items) =>{
 
     document.querySelector("tbody").innerHTML = "";
@@ -65,12 +69,14 @@ const displayData = (items) =>{
 
         let btn1 = document.createElement("button");
         btn1.innerText = "ADD";
+        btn1.setAttribute("class","btn")
         btn1.addEventListener("click",function(){
             add1(index);
         })
 
         let btn2 = document.createElement("button");
         btn2.innerText = "REMOVE";
+        btn2.setAttribute("class", "btn")
         btn2.addEventListener("click",function(){
 
             if(qty > 1)
@@ -108,6 +114,7 @@ const displaytotal = () =>{
     document.querySelector("#total").innerText = `Sub Total :   Rs. ${total}`
 
     document.querySelector("#pay").innerText = `PROCEED TO PAY ( Rs. ${total+50})`
+    
 
     localStorage.setItem("total",(total+50))
 }
@@ -140,6 +147,9 @@ const dlt =(index) =>{
     localStorage.setItem("addToCart",JSON.stringify(cartArr));
     displayData(cartArr);
     displaytotal();
+    let length = cartArr.length;
+    document.querySelector("#h3").innerText = `Shopping Cart (${length} items)`
+
 }
 
 
