@@ -177,17 +177,18 @@
     // appending top part
     let top_part = document.querySelector("#top");
     top_part.innerHTML = top();
-
+    
     // appending navbar part
     let header = document.querySelector("#header");
     header.innerHTML = navbar();
-
+    
     // appending footer part
     let foot = document.querySelector("#footer");
     foot.innerHTML = footer();
-
+    
+    
     var user_click = document.querySelector(".user");
-
+    
     var user_list = document.querySelector(".ham");
 
     user_list.style.display = "none";
@@ -208,10 +209,18 @@
 
     let data = await getData(url);
 
-    import category from "./index.js";
+    import {category,appendSearch} from "./index.js";
 
     let main = document.querySelector("#sidebar-popup");
-    console.log(category(data, main));
+    category(data, main)
+
+    let search = document.getElementById("search")
+    search.addEventListener("keypress",(el)=>{
+        if(el.code==="Enter"){
+            // console.log(search.value);
+            appendSearch(data,main,search.value)
+        }
+    })
 
     import { asyncData, appending, appendD } from "./fetch.js";
 
@@ -238,4 +247,4 @@
         }
     }, 5000);
 </script>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>

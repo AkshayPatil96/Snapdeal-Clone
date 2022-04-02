@@ -105,6 +105,7 @@ margin-top: 15px;
 </html>
 
 <script type="module">
+  localStorage.clear();
   import { navbar, footer } from "./components/navbar.js";
   console.log(navbar);
 //   let header = document.querySelector("#header");
@@ -125,11 +126,8 @@ margin-top: 15px;
       list.style.display = "none";
     }
   });
-
-
-
-
-  localStorage.removeItem("addToCart")
-  localStorage.removeItem("total")
-  localStorage.removeItem("count")
+  // localStorage.clear();
+  // localStorage.removeItem("addToCart")
+  // localStorage.removeItem("total")
+  
 </script>

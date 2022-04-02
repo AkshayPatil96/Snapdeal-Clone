@@ -1,11 +1,10 @@
-let category = (data, main) => {
-    console.log(data);
+let category = (data, main,search) => {
     for (let e in data) {
         let element = document.querySelector(".top-category-menu");
         let li = document.createElement("li");
         li.addEventListener("mouseenter", () => {
             main.style.display = "block";
-            appendData(data[e], main);
+            appendData(data[e], main,search);
             localStorage.setItem("Fashion", data[e].title);
         });
         let img = document.createElement("img");
@@ -16,9 +15,8 @@ let category = (data, main) => {
         element.append(li);
     }
 };
-let appendData = (data, main) => {
+let appendData = (data, main,search) => {
     main.innerHTML = null;
-
     main.addEventListener("mouseleave", () => {
         main.style.display = "none";
     });
@@ -30,7 +28,6 @@ let appendData = (data, main) => {
             categoryName.innerText = e.toUpperCase();
             categoryName.style.background = "none";
             // console.log('categoryName: ', categoryName);
-
             let itemNames = document.createElement("div");
             itemNames.style.background = "none";
 
@@ -55,4 +52,23 @@ let appendData = (data, main) => {
     }
 };
 
-export default category;
+
+let appendSearch = (data,main,searchValue)=>{
+   for(let e in data){
+       localStorage.setItem("Fashion",e);
+       let categories=(data[e])
+       for(let el in categories){
+           let products=(categories[el])
+           for(let elem in products){
+          
+            if(elem===searchValue){
+                    localStorage.setItem("item",JSON.stringify(products[elem]))
+                    window.location.href="products.html"
+                    return;
+            }
+           }
+       }
+   }
+}
+
+export {category,appendSearch};
