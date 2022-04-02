@@ -177,18 +177,17 @@
     // appending top part
     let top_part = document.querySelector("#top");
     top_part.innerHTML = top();
-    
+
     // appending navbar part
     let header = document.querySelector("#header");
     header.innerHTML = navbar();
-    
+
     // appending footer part
     let foot = document.querySelector("#footer");
     foot.innerHTML = footer();
-    
-    
+
     var user_click = document.querySelector(".user");
-    
+
     var user_list = document.querySelector(".ham");
 
     user_list.style.display = "none";
@@ -209,17 +208,26 @@
 
     let data = await getData(url);
 
-    import {category,appendSearch} from "./index.js";
+    import { category, appendSearch } from "./index.js";
 
     let main = document.querySelector("#sidebar-popup");
-    category(data, main)
+    category(data, main);
     // let trenUrl="https://profound-donut-01ca79.netlify.app/trending.json"
     // let trending = await getData(trenUrl)
     // console.log(trending);
     // let trendMain=document.querySelector(".trnd")
     // console.log(trendMain);
+    import { asyncData, appending, appendD } from "./fetch.js";
 
-    
+    let more_data = document.querySelector("#more-prod");
+    let trend_p = document.querySelector("#trend-p");
+
+    let res = await asyncData(
+        `https://profound-donut-01ca79.netlify.app/trending.json`
+    );
+
+    appending(res, more_data);
+    appendD(res, trend_p);
 </script>
 
 <script type="text/javascript">
