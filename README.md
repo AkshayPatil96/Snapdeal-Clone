@@ -6,3 +6,5 @@ Sankalp Jaiswal Blog link : "https://medium.com/@sankalpjaiswal79/cloning-of-sna
 
 
 Parvej Ahmad Blog Link : https://medium.com/@ahmadparvej58/cloning-of-snapdeal-com-website-e66c98e9d820
+
+Abhishek Rai Blog Link : "https://medium.com/@abhishek.rai8280/clone-of-snapdeal-com-4ec15ef616e"
