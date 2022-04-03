@@ -39,12 +39,13 @@ function creditdetails(event) {
     year.placeholder = "year"
 
     let cvv = document.createElement("p")
-    cvv.innerText = "CVV"
+    cvv.innerText = "CVV";
 
 
 
     let cvvinput = document.createElement("input")
-    cvvinput.placeholder = "CVV"
+    cvvinput.placeholder = "CVV";
+    cvvinput.type = "password"
 
     let button = document.createElement("button")
 
@@ -112,12 +113,14 @@ function debitdetails(event) {
     year.placeholder = "year"
 
     let cvv = document.createElement("p")
-    cvv.innerText = "CVV"
+    cvv.innerText = "CVV";
+    
 
 
 
     let cvvinput = document.createElement("input")
-    cvvinput.placeholder = "CVV"
+    cvvinput.placeholder = "CVV";
+    cvvinput.type = "password"
 
     let button = document.createElement("button")
     button.setAttribute("id", "paybutton")
