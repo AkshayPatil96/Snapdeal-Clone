@@ -1,49 +1,49 @@
 let item = JSON.parse(localStorage.getItem("item"));
 
-    let selectSort = document.getElementById("select-sort")
-    selectSort.addEventListener("click", () => {
+let selectSort = document.getElementById("select-sort")
+selectSort.addEventListener("click", () => {
 
-        if (selectSort.value === "ltoh") {
-            item.sort((a, b) => {
-                return a.price - b.price;
-            })
-            append(item)
-        } else if (selectSort.value === "htol") {
-            item.sort((a, b) => {
-                return b.price - a.price;
-            })
-            append(item)
-        }
-    })
-
-    let sortByPrice = document.getElementById("sortBYPrice");
-    sortByPrice.addEventListener("click", () => {
-        let lowPrice = document.getElementById("low").value
-        let highPrice = document.getElementById("high").value
-        let newItem = item.filter((elements) => {
-            return Number(elements.price) > lowPrice && Number(elements.price) < highPrice;
+    if (selectSort.value === "ltoh") {
+        item.sort((a, b) => {
+            return a.price - b.price;
         })
-        append(newItem);
-
-    })
-    let sortByRating = document.getElementById("sortByRating");
-    sortByRating.addEventListener("submit", (event) => {
-        event.preventDefault();
-        let formData = new FormData(sortByRating)
-        let value = formData.get("rating")
-        let newItem = item.filter((elements) => {
-            return Number(elements.rating) >= Number(value)
+        append(item)
+    } else if (selectSort.value === "htol") {
+        item.sort((a, b) => {
+            return b.price - a.price;
         })
-        append(newItem);
-    })
+        append(item)
+    }
+})
 
-    let FashionName = localStorage.getItem("Fashion");
-    let append = (data) => {
-        document.getElementById("product-bar").innerHTML = null;
-        document.getElementById("product-type").innerText = FashionName;
-        data.map((elem,index) => {  
-            if(index!=0){
-                let div = document.createElement("div");
+let sortByPrice = document.getElementById("sortBYPrice");
+sortByPrice.addEventListener("click", () => {
+    let lowPrice = document.getElementById("low").value
+    let highPrice = document.getElementById("high").value
+    let newItem = item.filter((elements) => {
+        return Number(elements.price) > lowPrice && Number(elements.price) < highPrice;
+    })
+    append(newItem);
+
+})
+let sortByRating = document.getElementById("sortByRating");
+sortByRating.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let formData = new FormData(sortByRating)
+    let value = formData.get("rating")
+    let newItem = item.filter((elements) => {
+        return Number(elements.rating) >= Number(value)
+    })
+    append(newItem);
+})
+
+let FashionName = localStorage.getItem("Fashion");
+let append = (data) => {
+    document.getElementById("product-bar").innerHTML = null;
+    document.getElementById("product-type").innerText = FashionName;
+    data.map((elem, index) => {
+        if (index != 0) {
+            let div = document.createElement("div");
             div.addEventListener("click", () => {
                 preview(elem);
                 window.location.href = "preview.html"
@@ -74,15 +74,14 @@ let item = JSON.parse(localStorage.getItem("item"));
             }
             div.append(img, name, pricediv, rating)
             document.getElementById("product-bar").append(div)
-            }
-            
+        }
 
-        })
-    }
-    append(item);
-    
 
-    let preview = (elem) => {
-        localStorage.setItem("preview", JSON.stringify(elem))
-    }
-    
+    })
+}
+append(item);
+
+
+let preview = (elem) => {
+    localStorage.setItem("preview", JSON.stringify(elem))
+}
